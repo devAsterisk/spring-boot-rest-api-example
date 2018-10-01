@@ -1,0 +1,24 @@
+# intelliJ
+.idea/
+*.iml
+
+# build output
+out/
+target/
+
+# log files
+*.log
+
+# package files
+*.jar
+*.war
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# OSX files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
