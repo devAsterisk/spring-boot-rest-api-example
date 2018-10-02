@@ -31,33 +31,37 @@ public class UserController {
     // CREATE
     // 사용자 이름을 입력받아 새로운 User를 생성하고 그 결과를 반환
     @PostMapping
-    public User put(@RequestParam String name) {
+    public User create(@RequestParam String name) {
         return userRepository.save(new User(name));
     }
+
     // READ
     // 모든 사용자 리스트를 반환
     @GetMapping
-    public Iterable<User> list() {
+    public Iterable<User> readAll() {
         return userRepository.findAll();
     }
+
     // READ
     // 해당 ID의 사용자를 반환
     @GetMapping(value = "/{id}")
-    public User findOne(@PathVariable Long id) {
+    public User readOne(@PathVariable Integer id) {
         return userRepository.findOne(id);
     }
+
     // UPDATE
     // 해당 ID의 사용자 이름을 갱신한 뒤 그 결과를 반환
     @PutMapping(value = "/{id}")
-    public User update(@PathVariable Long id, @RequestParam String name) {
+    public User update(@PathVariable Integer id, @RequestParam String name) {
         User user = userRepository.findOne(id);
         user.setName(name);
         return userRepository.save(user);
     }
+
     // DELETE
     // 해당 ID의 사용자를 삭제
     @DeleteMapping
-    public void delete(@RequestParam Long id) {
+    public void delete(@RequestParam Integer id) {
         userRepository.delete(id);
     }
 }

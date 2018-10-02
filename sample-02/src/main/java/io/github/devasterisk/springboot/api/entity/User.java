@@ -13,7 +13,7 @@ import javax.persistence.Id;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     private String name;
 
     protected User() {}
@@ -22,7 +22,7 @@ public class User {
         this.name = name;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
